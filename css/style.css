@@ -1,0 +1,711 @@
+/* ========================================
+GENEREL STYLING - Gælder for hele hjemmesiden
+ ========================================*/
+
+/* Sørger for at padding og border tæller med i elementernes størrelse */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Fjerner browserens standardafstand rundt om siden */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidens grundlæggende baggrundsfarve */
+
+body {
+    background-color: #EDEBE8;
+}
+
+/* ========================================
+   HEADER
+   Logo, brandnavn og navigation
+   ======================================== */
+
+   /* Fjerner standard link-styling fra links i headeren */
+header a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Navigationen i højre side af headeren */
+.header-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+/* Placerer brand og navigation på hver sin side af headeren */
+header > nav {
+    height: 100%;
+    padding: 24px 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Samler logo og LUMINA Audio-navnet på én række */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Selve LUMINA-logoet i headeren */
+.brand img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 10px rgba(46, 38, 33, 0.13);
+}
+
+/* Teksten "LUMINA Audio" ved siden af logoet */
+.brand span {
+    font-family: "MuseoModerno", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 3px;
+}
+
+/* ========================================
+   HERO SEKTION
+   Intro-tekst, produktbillede og bestillingsknap
+   ======================================== */
+
+   /* Placerer hero-teksten og produktområdet ved siden af hinanden */
+.hero {
+    display: flex;
+    align-items: center;
+
+    padding: 80px 120px;
+    gap: 64px;
+
+    background-color: #EDEBE8;
+}
+
+/* Samler overskrift, brødtekst og knap i venstre side */
+.hero-text {
+    width: 480px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* Hero-sektionens store hovedoverskrift */
+.hero-text h1 {
+    margin: 0;
+
+    font-family: "MuseoModerno", sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 80px;
+}
+
+/* Brødteksten under hero-overskriften */
+.hero-text > p {
+    margin: 0;
+
+    font-family: "Lora", serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+/* Området til produktbilledet i højre side */
+.hero-product-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+/* Skaber det bløde rosa glow bag højttaleren */
+.hero-product-area::before {
+    content: "";
+    position: absolute;
+
+    width: 650px;
+    height: 420px;
+
+    background: rgba(214, 159, 172, 0.65);
+    filter: blur(80px);
+    border-radius: 50%;
+
+    z-index: 0;
+}
+
+/* Størrelse og skalering af produktbilledet */
+.hero-product-area img {
+    display: block;
+    width: 100%;
+    max-width: 616px;
+    height: auto;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* Styling af "Order now"-knappen */
+.hero-button {
+    padding: 16px 28px;
+
+    border: none;
+    border-radius: 30px;
+
+    background-color: #1F1D1A;
+    color: #FFFFFF;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    cursor: pointer;
+}
+
+/* ========================================
+   RETAILER SEKTION
+   Logoer for forhandlere af LUMINA Audio
+   ======================================== */
+
+   /* Bestemmer afstand og baggrund for hele retailer-sektionen */
+.retailers {
+    padding: 40px 120px;
+    background-color: #EDEBE8;
+}
+
+/* Placerer forhandlerlogoerne på én vandret række med plads imellem */
+.retailer-logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+
+    padding: 32px 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow:
+
+        0 -1px 5px rgba(46, 38, 33, 0.05) inset,
+        0 1px 2px rgba(255, 255, 255, 0.62) inset,
+        0 14px 34px rgba(38, 33, 28, 0.10);
+
+    backdrop-filter: blur(15px);
+}
+
+/* Styrer størrelse og skalering af de enkelte forhandlerlogoer */
+.retailer-logos img {
+    display: block;
+    max-width: 160px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* ========================================
+   LIFESTYLE CAROUSEL
+   Billedkort, pile og navigationsprikker
+   ======================================== */
+
+/* Hele carousel-sektionen og dens afstand til resten af siden */
+
+.lifestyle-carousel {
+    position: relative;
+
+    padding: 96px 120px;
+
+    background-color: #EDEBE8;
+    overflow: hidden;
+}
+
+/* Placerer de tre billedkort på én vandret række */
+.carousel-cards {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+}
+
+/* Styling af hvert enkelt billedkort */
+.carousel-cards > div {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+/* Størrelse og beskæring af billederne i kortene */
+.carousel-cards > div img {
+    display: block;
+
+    width: 100%;
+    height: 520px;
+
+    object-fit: cover;
+}
+
+/* Teksten oven på hvert carousel-billede */
+.carousel-cards > div p {
+    position: absolute;
+    left: 32px;
+    bottom: 32px;
+
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-family: "Lora", serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+/* Grundstyling af begge navigationspile */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    cursor: pointer;
+    z-index: 2;
+}
+/* Placering af venstre pil */
+.carousel-arrow-left {
+    left: 136px;
+}
+
+/* Placering af højre pil */
+.carousel-arrow-right {
+    right: 136px;
+}
+
+/* Laver pilesymbolet inde i de runde knapper */
+.carousel-arrow::before {
+    content: "";
+    display: block;
+
+    width: 10px;
+    height: 10px;
+
+    border-top: 2px solid #1F1D1A;
+    border-right: 2px solid #1F1D1A;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+/* Drejer pilesymbolet mod højre */
+.carousel-arrow-right::before {
+    transform: translate(-65%, -50%) rotate(45deg);
+}
+
+/* Drejer pilesymbolet mod venstre */
+.carousel-arrow-left::before {
+    transform: translate(-35%, -50%) rotate(-135deg);
+}
+
+/* Samler navigationsprikkerne under billederne */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+/* Styling af en almindelig navigationsprik */
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+    background-color: #C8C5C1;
+}
+
+/* Gør prikken for det aktive slide mørk */
+.carousel-dot.active {
+    background-color: #1F1D1A;
+}
+
+/* ========================================
+   SOCIAL CONNECT
+   App-sektion med telefonbillede, tekst og download-knapper
+   ======================================== */
+
+.social-connect {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 30px;
+    border: 1px solid rgba(200, 206, 192, 0.42);
+    background:#C8cec0;
+    box-shadow: 0 -1px 5px 0 rgba(46, 38, 33, 0.05) inset, 0 1px 2px 0 rgba(255, 255, 255, 0.62) inset, 0 14px 34px 0 rgba(38, 33, 28, 0.10);
+    backdrop-filter: blur(15px);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.social-connect-image {
+    width: 50%;
+}
+
+.social-connect-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.social-connect-content {
+    width: 50%;
+    padding: 40px;
+    
+}
+
+.app-downloads {
+   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.app-downloads img {
+    display: block;
+    height: 48px;
+    width: auto;
+}
+
+.app-downloads img:first-child {
+    height: 60px;
+}
+.section-label {
+    width: 100%;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.section-label {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.social-connect-content h2 {
+    margin: 24px 0;
+
+    font-family: "MuseoModerno", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+}
+
+.social-connect-content > p:not(.section-label) {
+    margin: 0 0 24px;
+
+    font-family: "Lora", serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+
+    max-width: 520px;
+}
+
+
+/*Product Details*/
+
+.product-details {
+    padding: 96px 120px;
+    background-color: #EDEBE8;
+}
+
+.product-details > h2 {
+    margin: 0 0 48px 0;
+
+    font-family: "MuseoModerno", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+}
+
+.product-details-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.product-specs,
+.product-details-image {
+    flex: 1;
+}
+
+.product-specs {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.product-specs > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(31, 29, 26, 0.2);
+}
+
+.product-specs dt {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.product-specs dd {
+    margin: 0;
+
+    font-family: "Lora", serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    text-align: right;
+}
+
+.product-details-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================================
+   REVIEWS SEKTION
+   Trustpilot-score og samlet anmeldelsesoversigt
+   ======================================== */
+
+/* Styrer afstand og baggrundsfarve for hele reviews-sektionen */
+.reviews {
+    padding: 48px 120px 0px;
+    background-color: #EAE2ED;
+}
+/* Samler overskrift, Trustpilot-logo og score lodret og centrerer dem */
+.reviews-summary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 32px 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.7);
+    background: rgba(255, 255, 255, 0.18);
+
+    box-shadow: 
+        0 -1px 5px rgba(46, 38, 33, 0.05) inset,
+        0 1px 2px rgba(255, 255, 255, 0.62) inset,
+        0 14px 34px rgba(38, 33, 28, 0.10);
+
+    backdrop-filter: blur(15px);
+};
+    
+
+/* Styling af overskriften "Loved out loud." */
+.reviews-summary h2 {
+    margin: 0;
+    font-family: "MuseoModerno", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+}
+
+/* Styling af teksten med Trustpilot-score og antal anmeldelser */
+.reviews-summary p {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+/* Sørger for at Trustpilot-logo skalerer uden at blive forvrænget */
+.reviews-summary img {
+    display: block;
+    width: 140px;
+    height: auto;
+}
+
+/* ========================================
+   REVIEW CARDS
+   ======================================== */
+
+.review-cards {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #EAE2ED;
+    padding: 40px 50px;
+}
+
+.review-cards-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    background: #EAE2ED;
+    padding: 40px 50px;
+}
+
+.review-card {
+    width: 33%;
+    padding: 30px;
+    background: #f5f3f2;
+    border-radius: 30px;
+    border: 1px solid white;
+    box-shadow: 0 10px 25px rgba(60, 50, 60, 0.12);
+}
+
+.review-stars {
+    background: #f5f3f2;
+    color: #685D54;
+}
+
+.review-author {
+    background: #f5f3f2;
+    color: #685D54;
+}
+
+.review-text {
+    background: #f5f3f2;
+    color: #685D54;
+}
+
+/* ========================================
+   FOOTER
+   Sidens afsluttende sektion med logo, sociale medier og navigation
+   ======================================== */
+
+/* Opbygger footeren i tre områder og placerer dem vandret med afstand imellem */
+footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 64px 120px;
+    background-color: #685D54;
+    color: #fff;
+}
+
+/* Gør alle links i footeren hvide og fjerner standard-understregningen */
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Placerer logo og LUMINA Audio-navn ved siden af hinanden */
+.footer-brand > a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Styrer størrelsen på det hvide LUMINA-logo */
+.footer-brand img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+/* Styling af LUMINA Audio-navnet ved logoet */
+.footer-brand span {
+    font-family: "MuseoModerno", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 3px;
+}
+
+/* Styling af copyright-teksten under logoet */
+.footer-brand > p {
+    margin: 20px 0 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    opacity: .7;
+}
+
+/* Placerer ikonerne til sociale medier ved siden af hinanden */
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Styrer størrelsen på ikonerne til sociale medier */
+.footer-socials img {
+    display: block;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Fjerner standard-listestyling og placerer footerens navigationslinks vandret */
+.footer-links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+}
+
+/* Styling af navigationslinks i footeren */
+.footer-links a {
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+/* Styling af Privacy og Terms nederst i footerens navigation */
+.footer-links > p {
+    margin: 24px 0 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    opacity: .7;
+}
